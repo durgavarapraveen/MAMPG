@@ -69,6 +69,7 @@ body {
     font-family: 'Source Serif 4', serif;
 }
 .row {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -80,7 +81,8 @@ body {
     border: 1px solid black;
     border-radius: 10px;
     background-color: #FFFFFF;
-    height: 340px;
+    height: 100%;
+    padding: 30px 20px;
 }
 .info {
     width: 90%;
@@ -95,12 +97,17 @@ body {
     margin: 3px 0 5px 0;
     font-family: 'Inter', sans-serif;
 }
-.info p {
-    margin: 3px 0px 0 5px;
+.info span {
+    margin: 3px 10px 0 5px;
     color: #33455F;
     font-weight: 500;
     font-family: 'Inter', sans-serif;
     font-size: 17px;
+}
+.info i {
+    font-weight: 500;
+    font-size: 17px;
+    margin-top: 5px;
 }
 .photo {
     width: 50%;
@@ -117,6 +124,45 @@ body {
     font-weight: 300;
     color: #33455F;
 }
+.information p {
+    text-align: center;
+}
+.row-info-star {
+    display: flex;
+    flex-direction: row;
+}
+
+
+@media screen and (max-width: 992px) {
+    .row {
+        flex-direction: column;
+    }
+    .matter {
+        width: 80%;
+        margin: auto;
+    }
+    .photo {
+        margin: 10px auto;
+        width: 80%;
+        height: 100%;
+    }
+    
+    .information {
+        margin: 30px auto;
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .information p {
+        /* width: 80%; */
+        margin: auto;
+        text-align: center;
+    }
+    .row-info-star {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .clgname {
         position: relative;
@@ -147,29 +193,34 @@ body {
         height: 120px;
         margin-left: 10px;
     }
-    .row {
-        flex-direction: column;
-        justify-content: center;
-        width: 100vw;
+    .heading {
+        padding: 15px 30px;
+        font-size: 25px;
+        margin-top: 20px;
+        font-family: 'Source Serif 4', serif;
     }
     .matter {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        border: 1px solid black;
-        border-radius: 10px;
-        background-color: #FFFFFF;
-        margin: auto;
-        height: 100%;
+        width: 90%;
+        border-radius: 5px;
         padding: 15px 5px;
     }
+    .big {
+        font-size: 18px;
+    }
+    .info span {
+        font-size: 15px;
+    }
+    .info i {
+        font-size: 15px;
+        margin-top: 5px;
+    }
     .photo {
-        width: 80%;
-        height: 160px;
+        width: 90%;
+        height: 100%;
         margin: 20px auto;
     }
     .photo img {
-        height: 160px;
+        height: 240px;
     }
     .information {
         width: 80%;

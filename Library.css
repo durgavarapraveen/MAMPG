@@ -117,6 +117,41 @@ body {
     font-weight: 300;
     color: #33455F;
 }
+
+@media screen and (max-width: 992px) {
+    .row {
+        flex-direction: column;
+        width: 100%;
+    }
+    .matter {
+        margin:  20px auto;
+        padding: 20px 0;
+        width: 80%;
+        height: 100%;
+    }
+    
+    .big {
+        font-size: 18px;
+    }
+    .info p {
+        font-size: 15px;
+    }
+    .photo {
+        width: 80%;
+        margin: auto;
+        height: 100%;
+    }
+    .photo img {
+        height: 300px;
+    }
+    .information {
+        width: 80%;
+        margin: 30px auto;
+        font-size: 18px;
+        font-weight: 400;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .clgname {
         position: relative;
@@ -151,7 +186,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 100vw;
+        width: 100%;
     }
     .matter {
         display: flex;
@@ -166,15 +201,15 @@ body {
     }
     .photo {
         width: 80%;
-        height: 160px;
+        height: 100%;
         margin: 20px auto;
     }
     .photo img {
-        height: 160px;
+        height: 200px;
     }
     .information {
         width: 80%;
-        margin: 50px auto;
+        margin: 20px auto 50px auto;
         font-family: 'Inter', sans-serif;
         font-size: 16px;
         font-weight: 300;

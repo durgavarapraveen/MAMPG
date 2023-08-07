@@ -102,6 +102,27 @@ body {
     margin: 15px auto;
     font-size: 40px;
 }
+object {
+    width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+    .approvals-row img {
+        width: 150px;
+        height: 150px;
+    }
+    .pdf-holder {
+        width: 80%;
+        margin: auto;
+        height: 500px;
+        margin-bottom: 60px;
+    }
+    .head-name {
+        margin: 15px auto;
+        font-size: 30px;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .clgname {
         position: relative;
@@ -131,5 +152,28 @@ body {
         width: 120px;
         height: 120px;
         margin-left: 10px;
+    }
+    .approvals-row {
+        display: flex;
+        flex-direction: row;
+    }
+    .approvals-row img {
+        width: 100px;
+        height: 100px;
+    }
+    .approval-name {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+    .head-name {
+        margin: 15px auto;
+        font-size: 20px;
+    }
+    .pdf-holder {
+        width: 90%;
+        margin: auto;
+        height: 400px;
+        margin-bottom: 60px;
     }
 }

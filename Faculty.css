@@ -72,7 +72,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 100vw;
+    width: 90%;
 }
 .left {
     width: 25%;
@@ -81,17 +81,19 @@ body {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    height: 400px;
+    height: 100%;
 }
-.left p {
-    font-size: 12px;
-    margin-top: 20px;
-    margin-left: 15px;
-}
-.left a {
+
+.tf-a {
     text-decoration: none;
     color: #000000;
     margin: 25px;
+    font-weight: 600;
+}
+.tf-c {
+    text-decoration: none;
+    color: #000000;
+    margin: 15px 0 15px 50px;
     font-weight: 600;
 }
 .right {
@@ -109,8 +111,8 @@ body {
     margin-left: 5px;
 }
 .card {
-    width: 90%;
-    margin: 10px 0;
+    width: 100%;
+    margin: 10px 0 30px 0;
     background-color: #FFFFFF;
     display: flex;
     flex-direction: row;
@@ -118,7 +120,8 @@ body {
 }
 .card img {
     width: 100px;
-    height: 100px;
+    height: 100%;vertical-align: middle;
+
 }
 .details {
     display: flex;
@@ -145,6 +148,42 @@ body {
     font-size: 15px;
     margin-left: 3px;
 }
+
+@media screen and (max-width: 992px) {
+    .right {
+        width: 60%;
+    }
+    .header {
+        font-size: 18px;
+        margin-left: 5px;
+    }
+    .card {
+        flex-direction: row;
+    }
+    .card img {
+        width: 100px;
+        height: 100%;
+    }
+    .details {
+        display: flex;
+        flex-direction: column;
+    }
+    .name {
+        font-weight: 500;
+        margin: 2px 0 4px 10px;
+    }
+    .dept {
+        flex-direction: column;
+        margin: 3px 0 3px 0;
+    }
+    .department label {
+        font-size: 14px;
+    }
+    .department p {
+        font-size: 14px;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .clgname {
         position: relative;

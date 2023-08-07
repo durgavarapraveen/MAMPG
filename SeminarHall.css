@@ -86,6 +86,29 @@ body {
     font-size: 20px;
     font-family: 'Inter', sans-serif;
 }
+
+@media screen and (max-width: 992px) {
+    .img-seminar {
+        width: 80%;
+        margin: 20px auto;
+        height: 310px;
+    }
+    .info {
+        margin: 30px auto;
+        width: 80%;
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: #FFFFFF;
+        padding: 35px 30px;
+    }
+    .info p {
+        color: #33455F;
+        font-size: 18px;
+        font-family: 'Inter', sans-serif;
+    }
+}
+
+
 @media screen and (max-width: 600px) {
     .clgname {
         position: relative;
