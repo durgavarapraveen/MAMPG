@@ -151,8 +151,16 @@ body {
         margin-left: 10px;
     }
     .photo-album-1 img {
-        max-width: 100px;
-        max-height: 75px;
+        max-width: 140px;
+        max-height: 100px;
         margin: 10px;
+    }
+    .photo-1 {
+        width: 80%;
+        margin: 10px auto 30px auto;
+    }
+    .photo-1 p {
+        font-size: 16px;
+        font-family: 'Source Serif 4', serif;
     }
 }
