@@ -38,7 +38,7 @@ const timeline = gsap.timeline({
 // Add the first animation to move the image horizontally
 timeline.to('.gsap-img-1', {
     x: "125%",
-    duration: 1,
+    duration: 0.4,
     ease: 'power2.out'
 });
 
@@ -46,13 +46,13 @@ timeline.to('.gsap-img-1', {
 // Add the second animation to make the image disappear
 timeline.to('.gsap-img-1', {
     scale: 0,
-    duration: 1,
+    duration: 0.2,
     ease: 'power2.out'
 });
 
 timeline.to('.flip-card-1', {
     opacity: 1,
-    duration: 0.5,
+    duration: 0.2,
 });
 
 const timeline2 = gsap.timeline({
@@ -67,7 +67,7 @@ const timeline2 = gsap.timeline({
 
 timeline2.to('.gsap-img-2', {
     x: "-125%",
-    duration: 1,
+    duration: 0.4,
     ease: 'power2.out'
 });
 
@@ -75,11 +75,11 @@ timeline2.to('.gsap-img-2', {
 // Add the second animation to make the image disappear
 timeline2.to('.gsap-img-2', {
     scale: 0,
-    duration: 1,
+    duration: 0.2,
     ease: 'power2.out'
 });
 
 timeline2.to(".flip-card-2", {
     opacity: 1,
-    duration: 0.5,
+    duration: 0.2,
 });

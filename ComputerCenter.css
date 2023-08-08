@@ -135,7 +135,7 @@ body {
 
 @media screen and (max-width: 992px) {
     .row {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     .matter {
         width: 80%;
@@ -155,7 +155,8 @@ body {
     .information p {
         /* width: 80%; */
         margin: auto;
-        text-align: center;
+        text-align: start;
+        font-size: 17px;
     }
     .row-info-star {
         display: flex;
