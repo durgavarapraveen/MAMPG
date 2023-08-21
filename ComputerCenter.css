@@ -4,7 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 body {
     font-family: 'Montserrat', sans-serif;
@@ -65,11 +65,11 @@ body {
     color: #33455F;
     padding: 15px 30px;
     font-size: 30px;
-    margin-top: 20px;
+    margin: 20px 0;
     font-family: 'Source Serif 4', serif;
 }
 .row {
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -81,8 +81,7 @@ body {
     border: 1px solid black;
     border-radius: 10px;
     background-color: #FFFFFF;
-    height: 100%;
-    padding: 30px 20px;
+    height: 340px;
 }
 .info {
     width: 90%;
@@ -97,23 +96,19 @@ body {
     margin: 3px 0 5px 0;
     font-family: 'Inter', sans-serif;
 }
-.info span {
-    margin: 3px 10px 0 5px;
+.info p {
+    margin: 3px 0px 0 5px;
     color: #33455F;
     font-weight: 500;
     font-family: 'Inter', sans-serif;
     font-size: 17px;
-}
-.info i {
-    font-weight: 500;
-    font-size: 17px;
-    margin-top: 5px;
 }
 .photo {
     width: 50%;
     height: 340px;
 }
 .photo img {
+    width: 100%;
     height: 330px;
 }
 .information {
@@ -124,43 +119,38 @@ body {
     font-weight: 300;
     color: #33455F;
 }
-.information p {
-    text-align: center;
-}
-.row-info-star {
-    display: flex;
-    flex-direction: row;
-}
-
 
 @media screen and (max-width: 992px) {
     .row {
         flex-direction: column-reverse;
+        width: 100%;
     }
     .matter {
-        width: 80%;
-        margin: auto;
-    }
-    .photo {
-        margin: 10px auto;
+        margin:  20px auto;
+        padding: 20px 0;
         width: 80%;
         height: 100%;
     }
     
-    .information {
-        margin: 30px auto;
-        font-size: 20px;
-        font-weight: 400;
+    .big {
+        font-size: 18px;
     }
-    .information p {
-        /* width: 80%; */
+    .info p {
+        font-size: 15px;
+    }
+    .photo {
+        width: 80%;
         margin: auto;
-        text-align: start;
-        font-size: 17px;
+        height: 100%;
     }
-    .row-info-star {
-        display: flex;
-        flex-direction: row;
+    .photo img {
+        height: 300px;
+    }
+    .information {
+        width: 80%;
+        margin: 30px auto;
+        font-size: 18px;
+        font-weight: 400;
     }
 }
 
@@ -194,38 +184,35 @@ body {
         height: 120px;
         margin-left: 10px;
     }
-    .heading {
-        padding: 15px 30px;
-        font-size: 25px;
-        margin-top: 20px;
-        font-family: 'Source Serif 4', serif;
+    .row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-direction: column-reverse;
+        width: 100%;
     }
     .matter {
-        width: 90%;
-        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: #FFFFFF;
+        margin: auto;
+        height: 100%;
         padding: 15px 5px;
     }
-    .big {
-        font-size: 18px;
-    }
-    .info span {
-        font-size: 15px;
-    }
-    .info i {
-        font-size: 15px;
-        margin-top: 5px;
-    }
     .photo {
-        width: 90%;
+        width: 80%;
         height: 100%;
         margin: 20px auto;
     }
     .photo img {
-        height: 240px;
+        height: 200px;
     }
     .information {
         width: 80%;
-        margin: 50px auto;
+        margin: 20px auto 50px auto;
         font-family: 'Inter', sans-serif;
         font-size: 16px;
         font-weight: 300;

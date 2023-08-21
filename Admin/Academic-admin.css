@@ -4,7 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 body {
     font-family: 'Montserrat', sans-serif;
@@ -27,8 +27,8 @@ body {
 .header-right {
     display: flex;
     flex-direction: column;
-    width: 75%;
-    margin: 20px auto ;
+    width: 80%;
+    margin: 20px auto;
 }
 .clgname .p{
     margin: 3px auto 3px auto;
@@ -68,92 +68,23 @@ body {
     margin-top: 20px;
     font-family: 'Source Serif 4', serif;
 }
-.row {
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.matter {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: #FFFFFF;
-    height: 340px;
-}
-.info {
-    width: 90%;
+.pdf-holder {
+    width: 70%;
     margin: auto;
-    display: flex;
-    flex-direction: column;
+    height: 600px;
+    margin-bottom: 60px;
 }
-.big {
-    font-size: 20px;
-    color: #33455F;
-    font-weight: 600;
-    margin: 3px 0 5px 0;
-    font-family: 'Inter', sans-serif;
-}
-.info p {
-    margin: 3px 0px 0 5px;
-    color: #33455F;
-    font-weight: 500;
-    font-family: 'Inter', sans-serif;
-    font-size: 17px;
-}
-.photo {
-    width: 50%;
-    height: 340px;
-}
-.photo img {
+.pdf-holder object {
     width: 100%;
-    height: 330px;
+    height: 99%;
 }
-.information {
-    width: 80%;
-    margin: 50px auto;
-    font-family: 'Inter', sans-serif;
-    font-size: 22px;
-    font-weight: 300;
-    color: #33455F;
+object {
+    width: 100%;
+    overflow-x: hidden;
 }
-
 @media screen and (max-width: 992px) {
-    .row {
-        flex-direction: column-reverse;
-        width: 100%;
-    }
-    .matter {
-        margin:  20px auto;
-        padding: 20px 0;
-        width: 80%;
-        height: 100%;
-    }
-    
-    .big {
-        font-size: 18px;
-    }
-    .info p {
-        font-size: 15px;
-    }
-    .photo {
-        width: 80%;
-        margin: auto;
-        height: 100%;
-    }
-    .photo img {
-        height: 300px;
-    }
-    .information {
-        width: 80%;
-        margin: 30px auto;
-        font-size: 18px;
-        font-weight: 400;
-    }
-}
 
+}
 @media screen and (max-width: 600px) {
     .clgname {
         position: relative;
@@ -183,39 +114,5 @@ body {
         width: 120px;
         height: 120px;
         margin-left: 10px;
-    }
-    .row {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        flex-direction: column-reverse;
-        width: 100%;
-    }
-    .matter {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        border: 1px solid black;
-        border-radius: 10px;
-        background-color: #FFFFFF;
-        margin: auto;
-        height: 100%;
-        padding: 15px 5px;
-    }
-    .photo {
-        width: 80%;
-        height: 100%;
-        margin: 20px auto;
-    }
-    .photo img {
-        height: 200px;
-    }
-    .information {
-        width: 80%;
-        margin: 20px auto 50px auto;
-        font-family: 'Inter', sans-serif;
-        font-size: 16px;
-        font-weight: 300;
-        color: #33455F;
     }
 }
