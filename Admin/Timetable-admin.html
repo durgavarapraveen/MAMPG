@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academics</title>
     <script src="https://kit.fontawesome.com/17305c1313.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Academic-admin.css" >
-    <script src="Academics-admin.js"></script>
+    <link rel="stylesheet" href="Timetable-admin.css" >
+    <script src="Timetable-admin.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 </head>
 <body>
@@ -24,17 +24,21 @@
         </div>
         <div class="main-container">
             <div class="heading">
-                <p>Academic Calender</p>
+                <p>Academic Time Table</p>
             </div>
             <div class="pdf-holder" id="pdf-preview">
+                <object data="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210101201653/PDF.pdf" ></object>
+                <button><i class="fa-solid fa-trash"></i></button>
+            </div>
+            <div class="pdf-holde" id="pdf-preview">
                 <!-- <object data="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210101201653/PDF.pdf" ></object> -->
             </div>
         </div>
         <div class="form">
             <form>
                 <label for="pdf">Upload the PDF to display</label>
-                <input type="file" id="pdf-file" accept="application/pdf" onchange="previewPDF()" />
-                <button type="submit">change</button>
+                <input type="file" id="pdf-file" accept="application/pdf" />
+                <button type="submit">Add</button>
             </form>
         </div>
 

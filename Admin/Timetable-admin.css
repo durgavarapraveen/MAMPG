@@ -73,6 +73,22 @@ body {
     margin: auto;
     height: 600px;
     margin-bottom: 60px;
+    display: flex;
+    flex-direction: row;
+}
+.pdf-holder button {
+    font-size: 20px;
+    padding: 10px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 3px;
+}
+.pdf-holder button:active {
+    border: 1px solid black;
 }
 .pdf-holder object {
     width: 100%;

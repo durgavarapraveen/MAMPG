@@ -78,10 +78,10 @@ body {
     width: 100%;
     padding: 1px;
     height: 1px;
-    background-image: linear-gradient(to right, black 50%, transparent 50%);
+    background-image: linear-gradient(to right, black 70%, transparent 30%);
     background-position: left top;
     background-repeat: repeat-x;
-    background-size: 30px 1px;
+    background-size: 20px 1px;
 }
 .big {
     color: #33455F;

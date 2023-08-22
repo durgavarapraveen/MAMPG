@@ -4,7 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 body {
     font-family: 'Montserrat', sans-serif;
@@ -27,8 +27,8 @@ body {
 .header-right {
     display: flex;
     flex-direction: column;
-    width: 80%;
-    margin: 20px auto;
+    width: 75%;
+    margin: 20px auto ;
 }
 .clgname .p{
     margin: 3px auto 3px auto;
@@ -68,48 +68,107 @@ body {
     margin-top: 20px;
     font-family: 'Source Serif 4', serif;
 }
-.pdf-holder {
+.img-seminar {
     width: 70%;
-    margin: auto;
-    height: 600px;
-    margin-bottom: 60px;
+    margin: 20px auto;
+    height: 350px;
 }
-.pdf-holder object {
-    width: 100%;
-    height: 99%;
-}
-object {
-    width: 100%;
-    overflow-x: hidden;
-}
-.form {
-    background-color: #FFFFFF;
-}
-form {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 40px ;
-}
-form label {
-    font-size: 18px;
-    margin: 10px 10px;
-
-}
-form input {
+.info {
+    margin: 50px auto;
+    width: 80%;
     border: 1px solid black;
-    margin: 10px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    padding: 45px 40px;
 }
-form button {
-    margin: 10px 10px;
-    padding: 6px 12px;
+.info p {
+    color: #33455F;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+}
+.btn-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    height: 100%;
+}
+
+
+/* CSS */
+.button-56 {
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-56:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.button-56:hover:after {
+  transform: translate(0, 0);
+}
+
+.button-56:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.button-56:hover {
+  outline: 0;
 }
 @media screen and (max-width: 992px) {
-
+    .img-seminar {
+        width: 80%;
+        margin: 20px auto;
+        height: 310px;
+    }
+    .info {
+        margin: 30px auto;
+        width: 80%;
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: #FFFFFF;
+        padding: 35px 30px;
+    }
+    .info p {
+        color: #33455F;
+        font-size: 18px;
+        font-family: 'Inter', sans-serif;
+    }
 }
+
+
 @media screen and (max-width: 600px) {
     .clgname {
         position: relative;
@@ -140,11 +199,22 @@ form button {
         height: 120px;
         margin-left: 10px;
     }
-    form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 40px ;
+    .img-seminar {
+        width: 90%;
+        margin: 10px auto;
+        height: 160px;
     }
-
+    .info {
+        margin: 10px auto;
+        width: 90%;
+        border: 1px solid black;
+        border-radius: 15px;
+        background-color: #FFFFFF;
+        padding: 10px 20px;
+    }
+    .info p {
+        color: #33455F;
+        font-size: 15px;
+        font-family: 'Inter', sans-serif;
+    }
 }
