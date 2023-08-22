@@ -11,12 +11,12 @@ body {
     background-color: #F8F4F4;
 }
 .container {
-    width: 100vw;
+    width: 98vw;
     height: 100%;
 }
 .clgname {
     position: relative;
-    width: 100vw;
+    width: 100%;
     min-height: 180px;
     display: flex;
     align-items: center;
@@ -57,7 +57,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     background-color: #F8F4F4;
     height: 100%;
 }
@@ -79,7 +79,7 @@ body {
 
 }
 .card-1 img {
-    width: 30%;
+    width: 100%;
     height: 100%;
     background-color: #FFFFFF;
 }
@@ -116,7 +116,7 @@ body {
     height: 170px;
 }
 .card-3 img {
-    width: 30%;
+    width: 100%;
     height: 100%;
     background-color: #FFFFFF;
 }
@@ -143,6 +143,7 @@ form {
     align-items: center;
     margin-bottom: 30px;
     border-radius: 10px;
+    padding: 10px 30px;
 }
 .form-row {
     display: flex;
@@ -158,6 +159,10 @@ form textarea {
     resize: none;
     text-indent: 10px;
     padding: 5px;
+}
+.image-col {
+    display: flex;
+    flex-direction: column;
 }
 form button {
     padding: 8px 25px;

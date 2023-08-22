@@ -1,23 +1,60 @@
-// Function to be executed when a mutation is observed
-function handleMutation(mutationsList, observer) {
-    for (let mutation of mutationsList) {
-      if (mutation.type === 'characterData') {
-        const changedNode = mutation.target;
-        const parentElement = changedNode.parentElement;
-        const changedElementId = parentElement.id;
-        console.log("Changed element id:", changedElementId);
+document.addEventListener('DOMContentLoaded', function() {
+  const idListText = [];
+  const idListImage = [];
+  const UpdatedTextList = [];
+  const UpdatedTextListId = [];
+  const UpdatedPhotoList = [];
+
+  const saveButton = document.getElementById('saveButton');
+  const photoInput = document.getElementById('photoInput');
+
+  const paragraph = document.querySelectorAll('p');
+
+  const images = document.querySelectorAll('img');
+
+  paragraph.forEach(paragraph => {
+    console.log('Enter paragraph');
+    paragraph.addEventListener('blur', function() {
+      idListText.push(this.id);
+      // console.log(this.id);
+      // console.log(idListText)
+    })
+  })
+
+  photoInput.addEventListener('change', (event) => {
+    const selectedPhoto = event.target.files[0];
+    if(selectedPhoto) {
+      const reader = new FileReader;
+      const photoDisplay = document.getElementById(idListImage[idListImage.length-1]);
+      reader.onload = (e) => {
+        photoDisplay.src = e.target.result;
       }
+      UpdatedPhotoList.push(photoInput.files[0]);
+      console.log(UpdatedPhotoList);
+      reader.readAsDataURL(selectedPhoto);
     }
-}
-  
-  // Select the target nodes for observation (the editable paragraphs)
-const targetNodes = document.querySelectorAll('[contenteditable="true"]');
-  
-  // Create an observer instance
-const observer = new MutationObserver(handleMutation);
-  
-  // Start observing each target node for character data changes
-targetNodes.forEach(node => {
-    observer.observe(node, { characterData: true });
-});
-  
+  })
+
+  images.forEach(image => {
+    console.log('Enter paragraph');
+    image.addEventListener('click', function() {
+      idListImage.push(this.id);
+      console.log(idListImage);
+      photoInput.click();
+    })
+  })
+
+  saveButton.addEventListener('click', function() {
+    for(let i = 0; i < idListText.length ; i++) {
+      var editableText = document.getElementById(idListText[i]);
+      var updatedText = editableText.innerText;
+      UpdatedTextListId.push(idListText[i]);
+      UpdatedTextList.push(updatedText)
+    }
+    // console.log(UpdatedTextList);
+    // console.log(UpdatedTextListId);
+
+    
+  })
+
+})

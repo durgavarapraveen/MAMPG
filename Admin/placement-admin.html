@@ -22,24 +22,37 @@
     
         </div>
         <div class="main-container">
+
+
             <div class="heading">
                 <p>Placements</p>
             </div>
+
             <div class="card-1" id="card1">
-                <img src="../photos/Rectangle 53.png" alt="Photo" >
+                <div class="image-col">
+                    <img id="card1-I" src="../photos/Rectangle 53.png" alt="Photo" >
+                    <input id="photoInput" type="file" accept="image/*" />
+                </div>
                 <div class="text-1">
-                    <p contenteditable="true">Learn to balance a dream and a job, until your dream becomes a job</p>
+                    <p id="card1-T" contenteditable="true">Learn to balance a dream and a job, until your dream becomes a job</p>
                 </div>
             </div>
+
             <div class="card-2" id="card2">
-                <p contenteditable="true" data-original-content="">In recruiting, there are no good and bad experiences - just learning experiences</p>
+                <p id="card2-T" contenteditable="true" data-original-content="">In recruiting, there are no good and bad experiences - just learning experiences</p>
             </div>
+
             <div class="card-3" id="card3">
                 <div class="text-3">
-                    <p contenteditable="true">Turning your passion into your job is much easier than finding a job that matches your passion</p>
+                    <p id="card3-T" contenteditable="true">Turning your passion into your job is much easier than finding a job that matches your passion</p>
                 </div>
-                <img src="../photos/image 12.png" alt="Photo" >
+                <div class="image-col">
+                    <img id="card3-I" src="../photos/image 12.png" alt="Photo" >
+                    <input id="photoInput" type="file" accept="image/*" />
+                </div>
             </div>
+
+
             <form>
                 <div class="form-row">
                     <input type="file" accept="image/*" id="photoInput" />
@@ -47,10 +60,14 @@
                 </div>
                 <button type="submit">ADD</button>
             </form>
+
+
         </div>
+
         <div class="btn-div">
-            <button class="button-56" id="saveButton" role="button" onclick="handleMutation()">SAVE</button>
+            <button class="button-56" id="saveButton" role="button">SAVE</button>
         </div>
+
     </div>
 </body>
 </html>
