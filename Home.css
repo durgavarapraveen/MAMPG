@@ -6,12 +6,15 @@
     padding: 0;
     /* overflow-x: hidden; */
 }
+::-webkit-scrollbar {
+    width: 0px;
+}
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #F8F4F4;
 }
 .container {
-    width: 98.5vw;
+    width: 100vw;
     height: 100%;
 }
 .clgname {
@@ -72,10 +75,13 @@ body {
     width: 100%;
     height: 540px;
 }
-.img-text p {
+.img-text span {
     position: absolute;
     top: 140px;
-    left: 18%;
+    left: 0;
+    right: 0;
+    width: 820px;
+    margin: auto;
     font-size: 50px;
     color: #33455F;
     font-weight: 600;
@@ -83,14 +89,15 @@ body {
 }
 .text-1 {
     width: 90%;
-    margin: 20px auto;
-    padding: 30px 30px;
+    margin: 60px auto 20px auto;
+    padding: 0px 30px;
 }
 .text-1 p {
     font-family: 'Inter', sans-serif;
     font-size: 24px;
     color: #33455F;
     font-weight: 600;
+    text-align: center;
 }
 .row {
     display: flex;
@@ -225,7 +232,7 @@ body {
 .card-text {
     position: absolute;
     background-color: #829CFB;
-    width: 70%;
+    width: 60%;
     z-index: 999;
     height: 100%;
     display: flex;
@@ -240,7 +247,7 @@ body {
 }
 .card img {
     width: 40%;
-    margin-left: 70%;
+    margin-left: 60%;
 }
 .traingle {
     width: 0;
@@ -251,7 +258,7 @@ body {
     position: absolute;
     z-index: 100;
     float: right;
-    right: 20%;
+    right: 29.6%;
 }
 .approvals {
     display: flex;
@@ -406,36 +413,61 @@ body {
 }
 
 @media screen and (max-width: 1100px) {
-    .img-text p {
+    .img-text span {
         top: 140px;
-        left: 10%;
-        right: 10%;
         font-size: 40px;
-        color: #33455F;
-        font-weight: 600;
-        background-image: url('img_girl.jpg')
+        width: 660px;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    .card {
+        width: 600px;
+        margin: 20px auto;
+        height: 180px;
+    }
+    .card-text {
+        width: 65%;
+    }
+    .card-text p {
+        font-size: 17px;
+        margin-left: 20px;
+    }
+    .card img {
+        width: 35%;
+        margin-left: 65%;
+    }
+    .traingle {
+        border-left: 0px solid transparent;
+        border-right: 50px solid transparent;
+        right: 28.05%;
+    }
+    .approvals-card {
+        width: 80%;
+    }
+    .approvals-card img {
+        width: 40%;
+        height: 200px;
+        opacity: 0.8;
+    }
+    .approvals-card-text {
+        width: 60%;
+    }
+    .approvals-card-text p {
+        padding: 10px 15px;
+        width: 100%;
+        font-size: 16px;
+        font-family: 'Inter', sans-serif;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .container {
-        width: 99vw;
-    }
-    .clgname {
-        position: relative;
-        width: 99vw;
-        display: flex;
-        background-color: #8D4B6E;
-        color: #FFFFFF;
-        flex-direction: column;
-    }
-    .img-text p {
-        position: absolute;
+
+    .img-text span {
         top: 110px;
-        left: 18%;
         font-size: 30px;
-        color: #33455F;
-        font-weight: 600;
+        width: 490px;
     }
     .clgname .p{
         font-size: 30px;
@@ -464,7 +496,7 @@ body {
     }
     .text-1 {
         width: 90%;
-        margin: 20px auto;
+        margin: 0px auto;
         padding: 10px 10px;
     }
     .text-1 p {
@@ -482,9 +514,13 @@ body {
     .flip-card-1, .flip-card-2 {
         background-color: transparent;
         width: 80%;
-        height: 300px;
+        height: 200px;
         perspective: 1000px;
         margin: 10px auto;
+    }
+    .rel img {
+        width: 100%;
+        height: 200px;
     }
     .flip-card:hover .flip-card-inner {
         transform: none;
@@ -493,6 +529,28 @@ body {
         -webkit-backface-visibility: visible;
         backface-visibility: hidden;
     }
+    .rel a {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 100px;
+        font-size: 30px;
+        font-weight: 600;
+        color: #414FD5;
+        text-decoration: none;
+    }
+    .rel span {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 130px;
+        font-size: 25px;
+        font-weight: 600;
+        color: #F50808;
+    }
+    
     
     .card {
         width: 80%;
@@ -523,18 +581,11 @@ body {
         width: 100%;
         height: 150px;
         margin-left: 0%;
-        /* margin-top: 150px; */
     }
     .traingle {
-        width: 0;
-        height: 0;
         border-left: 0px solid transparent;
         border-right: 0px solid transparent;
         border-bottom: 0px solid #829CFB;
-        position: absolute;
-        z-index: 100;
-        float: right;
-        right: 20%;
     }
     .approval-name p {
         font-size: 15px;
@@ -548,10 +599,12 @@ body {
     .approvals-row {
         width: 90%;
         margin:10px  auto;
+        display: flex;
+        align-items: center;
     }
     .approvals-row img {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
     }
     .approvals-card {
         flex-direction: column;
