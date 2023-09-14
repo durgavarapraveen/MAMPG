@@ -461,7 +461,12 @@ body {
         font-family: 'Inter', sans-serif;
     }
 }
-
+@media screen and (max-width: 700px) {
+    .img-text span {
+        font-size: 35px;
+        width: 580px;
+    }
+}
 @media screen and (max-width: 600px) {
 
     .img-text span {
