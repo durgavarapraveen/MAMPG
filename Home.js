@@ -4,11 +4,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Updateanimation() {
     gsap.to('.approval-name-1', {
-        x: (window.innerWidth < 600 ? " -120%" : "-170%"),
+        x: (window.innerWidth <= 400 ? null : (window.innerWidth < 600 ? '120%' : '170%')),
+        y: (window.innerWidth <= 400 ? '-150px' : null),
         duration: 1,
         scrollTrigger: {
             trigger: ".approval-name-2",
-            start: "top 90%",
+            start: "top 85%",
             end: "bottom 20%",
             marker: true,
             toggleActions: "restart reverse restart reverse",
@@ -16,7 +17,8 @@ function Updateanimation() {
     });
     
     gsap.to('.approval-name-3', {
-        x: (window.innerWidth < 600 ? " 120%" : "170%"),
+        x: (window.innerWidth <= 400 ? null : (window.innerWidth < 600 ? '-120%' : '-170%')),
+        y: (window.innerWidth <= 400 ? '150px' : null),
         duration: 1,
         scrollTrigger: {
             trigger: ".approval-name-2",

@@ -715,4 +715,41 @@ body {
     .course-text p {
         font-size: 35px;
     }
+    .course-text p {
+        font-size: 25px;
+    }
+    .flip-card-back p {
+        font-size: 13px;
+    }
+    .flip-card-back a {
+        font-size: 18px;
+    }
+    .card {
+        width: 90%;
+        margin: 60px auto 180px auto;
+    }
+    .card-text {
+        top: 150px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+    }
+    .card-text p {
+        font-size: 12px;
+        font-family: 'Inter', sans-serif;
+        margin: auto;
+        padding: 10px 15px;
+        text-align: center;
+    }
+    .card img {
+        width: 100%;
+        height: 150px;
+        margin-left: 0%;
+    }
+    .approvals-row {
+        height: 400px;
+    }
 }
