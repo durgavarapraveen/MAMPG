@@ -2,36 +2,42 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-gsap.to('.approval-name-1', {
-    x: "-170%",
-    duration: 1,
-    scrollTrigger: {
-        trigger: ".approval-name-2",
-        start: "top center",
-        end: "bottom 40%",
-        marker: true,
-        toggleActions: "restart reverse restart reverse",
-    }
-});
+function Updateanimation() {
+    gsap.to('.approval-name-1', {
+        x: (window.innerWidth < 600 ? " -120%" : "-170%"),
+        duration: 1,
+        scrollTrigger: {
+            trigger: ".approval-name-2",
+            start: "top 90%",
+            end: "bottom 20%",
+            marker: true,
+            toggleActions: "restart reverse restart reverse",
+        }
+    });
+    
+    gsap.to('.approval-name-3', {
+        x: (window.innerWidth < 600 ? " 120%" : "170%"),
+        duration: 1,
+        scrollTrigger: {
+            trigger: ".approval-name-2",
+            start: "top 90%",
+            end: "bottom 20%",
+            toggleActions: "restart reverse restart reverse",
+            
+        }
+    });
+}
 
-gsap.to('.approval-name-3', {
-    x: "170%",
-    duration: 1,
-    scrollTrigger: {
-        trigger: ".approval-name-2",
-        start: "top center",
-        end: "bottom 40%",
-        toggleActions: "restart reverse restart reverse",
-        
-    }
-});
+window.addEventListener('resize', Updateanimation)
+
+gsap.ticker.add(Updateanimation)
 
 
 const timeline = gsap.timeline({
     scrollTrigger: {
         trigger: ".flip-card-1",
-        start: "top 80%",
-        end: "bottom 30%",
+        start: "top 90%",
+        end: "bottom 10%",
         // markers: true,
         toggleActions: "restart reverse restart reverse"
     }
@@ -60,8 +66,8 @@ timeline.to('.flip-card-1', {
 const timeline2 = gsap.timeline({
     scrollTrigger: {
         trigger: ".flip-card-2",
-        start: "top 80%",
-        end: "bottom 30%",
+        start: "top 90%",
+        end: "bottom 10%",
         // markers: true,
         toggleActions: "restart reverse restart reverse"
     }

@@ -223,7 +223,7 @@ body {
 }
 .card {
     width: 990px;
-    margin: 40px auto;
+    margin: 100px auto 40px auto;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -424,7 +424,7 @@ body {
 @media screen and (max-width: 1000px) {
     .card {
         width: 600px;
-        margin: 20px auto;
+        margin: 80px auto 20px auto;
         height: 180px;
     }
     .card-text {
@@ -460,6 +460,11 @@ body {
         font-size: 16px;
         font-family: 'Inter', sans-serif;
     }
+    .youtube-vedio-text span {
+        width: 80%;
+        margin: auto;
+        font-size: 20px;
+    }
 }
 @media screen and (max-width: 700px) {
     .img-text span {
@@ -471,8 +476,9 @@ body {
 
     .img-text span {
         top: 110px;
-        font-size: 30px;
-        width: 490px;
+        font-size: 25px;
+        width: 300px;
+        text-align: center;
     }
     .clgname .p{
         font-size: 30px;
@@ -559,7 +565,7 @@ body {
     
     .card {
         width: 80%;
-        margin: 20px auto 180px auto;
+        margin: 80px auto 180px auto;
         display: flex;
         flex-direction: column;
         position: relative;
@@ -692,5 +698,21 @@ body {
         outline: none;
         border: none;
     
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .flip-card-back p {
+        width: 90%;
+        font-size: 16px;
+    }
+    .flip-card-back a {
+        text-decoration: line;
+        color: white;
+        font-size: 25px;
+        margin-top: 30px;
+    }
+    .course-text p {
+        font-size: 35px;
     }
 }
