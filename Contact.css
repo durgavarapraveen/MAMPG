@@ -97,4 +97,8 @@
     .b{
         width: 90%;
     }
+    .c{
+        margin-left: 0px;
+        font-size: 30px;
+    }
 }
