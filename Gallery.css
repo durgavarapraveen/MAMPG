@@ -112,16 +112,16 @@ body {
     flex-wrap: wrap;
     position: relative;
 }
-.col-12 {
+/* .col-12 {
     max-width: 210px;
     max-height: 175px;
     overflow: hidden;
     margin: 15px;
-}
+} */
 .photo-album-1 img {
-    width: 100%;
-    height: 100%;
-    /* margin: 15px; */
+    max-width: 210px;
+    max-height: 175px;
+    margin: 15px;
     transform-origin: 50% 50%;
     transition: transform 0.3s ease;
 }
@@ -168,14 +168,15 @@ body {
         justify-content: center;
     }
     .photo-album-1 img {
-        width: 100%;
-        height: 100%;
+        max-width: 280px;
+        max-height: 155px;
+        margin: 0px;
     }
     .col-12 {
         width: 90%;
         max-height: 155px;
-        overflow: hidden;
-        margin: 5px;
+        margin: 15px;
+        overflow: visible;
     }
     .photo-1 {
         width: 80%;
