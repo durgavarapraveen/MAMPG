@@ -192,7 +192,7 @@ body {
     .card-2 {
         width: 90%;
         margin: 20px auto;
-        padding: 10px 15px;
+        padding: 10px 10px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         border-radius: 5px;
         display: flex;
