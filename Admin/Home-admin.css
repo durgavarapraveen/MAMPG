@@ -344,7 +344,7 @@ body {
     height: 400px;
     position: relative;
 }
-.board marquee {
+.board .marquee {
     position: absolute;
     width: 60%;
     height: 200px;
@@ -356,16 +356,15 @@ body {
     display: flex;
     flex-direction: column;
 }
-.baord p{
-    margin: 30px auto;
+.scroll {
+    height: 100%;
+    overflow-y: scroll;
 }
 .board a {
     text-decoration: none;
     width: 90%;
-    margin: 30px auto;
-    padding: 30px auto;
-
     color: white;
+    
 }
 .icon-color {
     color: #F79C23;
@@ -463,6 +462,20 @@ body {
 
 .button-56:hover {
   outline: 0;
+}
+.input {
+    display: block;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+.icon-del {
+    color: black;
+    padding: 0 5px;
+}
+.btn-del-icon {
+    margin: 0 5px;
+    cursor: pointer;
 }
 @media screen and (max-width: 1100px) {
     .img-text span {

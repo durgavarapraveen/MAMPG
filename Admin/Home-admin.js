@@ -1,12 +1,14 @@
-document.addEventListener('DOMContentLoaded', function() {
+// document.addEventListener('DOMContentLoaded', function() {
     const idListText = [];
     const idListImages = [];
     const ListTextChange = [];
     const ListImageChange = [];
+    const IdDeleteButtonds = [];
 
     const saveButton = document.getElementById('saveButton');
     const paragraph = document.querySelectorAll('p')
     const paragraphSpan = document.querySelectorAll('span')
+    const btn = document.querySelectorAll('i');
     const photoInput1 = document.getElementById('photoInput1');
     const photoDisplay1 = document.getElementById('photoDisplay1');
     const photoInput2 = document.getElementById('photoInput2');
@@ -39,79 +41,53 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(idListText);
     })
 
-    photoInput1.addEventListener('change', (event) => {
-        const selectedPhoto = event.target.files[0];
-        console.log('Photo input changed');
-        console.log('Selected photo:', selectedPhoto);
-    
-        if (selectedPhoto && idListImages.length > 0) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                // Update the src attribute of the last image in idListImages
-                idListImages[idListImages.length - 1].src = e.target.result;
-            };
-            reader.readAsDataURL(selectedPhoto);
-        }
-    });
-
-
-    photoDisplay1.addEventListener('click' , ()=> {
-        photoInput1.click();
-    })
-
-    photoInput2.addEventListener('change' , (event) => {
-        const selectedPhoto = event.target.files[0];
-        console.log('Enter photo input');
-        if(selectedPhoto) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                photoDisplay.src = e.target.result;
+    // Function to handle file input change events
+    function handleFileInputChange(inputElement, displayElement) {
+        inputElement.addEventListener('change', (event) => {
+            const selectedPhoto = event.target.files[0];
+            idListImages.push(displayElement);
+            ListImageChange.push(selectedPhoto);
+            console.log('Enter photo input');
+            if (selectedPhoto) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    displayElement.src = e.target.result;
+                }
+                reader.readAsDataURL(selectedPhoto);
             }
-            reader.readAsDataURL(selectedPhoto);
-        }
-    }) 
+            console.log(idListImages);
+            console.log(ListImageChange)
+        });
 
-    photoDisplay2.addEventListener('click' , ()=> {
-        photoInput2.click();
-    })
-
-    photoInput3.addEventListener('change' , (event) => {
-        const selectedPhoto = event.target.files[0];
-        console.log('Enter photo input');
-        if(selectedPhoto) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                photoDisplay.src = e.target.result;
-            }
-            reader.readAsDataURL(selectedPhoto);
-        }
-    }) 
-
-    photoDisplay3.addEventListener('click' , ()=> {
-        photoInput3.click();
-    })
-
-    photoInput4.addEventListener('change' , (event) => {
-        const selectedPhoto = event.target.files[0];
-        console.log('Enter photo input');
-        if(selectedPhoto) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                photoDisplay.src = e.target.result;
-            }
-            reader.readAsDataURL(selectedPhoto);
-        }
-    }) 
-
-    photoDisplay4.addEventListener('click' , ()=> {
-        photoInput4.click();
-    })
+        displayElement.addEventListener('click', () => {
+            inputElement.click();
+        });
+    }
+    handleFileInputChange(photoInput1, photoDisplay1);
+    handleFileInputChange(photoInput2, photoDisplay2);
+    handleFileInputChange(photoInput3, photoDisplay3);
+    handleFileInputChange(photoInput4, photoDisplay4);
 
 
-    saveButton.addEventListener('click', function() {
 
-    })
+function DeleteBtn(element) {
+    console.log('Clicked')
+    const Id = element.id;
+    const X = document.getElementById(Id);
+    IdDeleteButtonds.push(Id);
+    X.style.visibility = 'hidden';
+    X.style.height = 0 + 'px';
+    X.style.display = 'none';
+    console.log(IdDeleteButtonds)
+}
 
+saveButton.addEventListener('click',function() {
+    const form = [{
+        idListImages,
+        ListImageChange,
+        idListText,
+        ListTextChange,
+        IdDeleteButtonds
+    }]
+    console.log(form)
 })
-
-
