@@ -8,12 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const Updatedans = [];
     const idIcons = [];
 
+
     const saveButton = document.getElementById('saveButton');
-
     const ques = document.querySelectorAll('span');
-
     const icons = document.querySelectorAll('i');
-
     const ans = document.querySelectorAll('p');
 
     ques.forEach(que => {

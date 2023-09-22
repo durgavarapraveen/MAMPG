@@ -6,6 +6,7 @@
     <title>APPROVALS</title>
     <script src="https://kit.fontawesome.com/17305c1313.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Approvals-admin.css" >
+    <script src="Approval-admin.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -26,32 +27,39 @@
                 <p>Approvals</p>
             </div>
             <div class="approvals-row">
-                <!-- <div class="approval-name">
-                    <img src="photos\image 20.png" alt="Photo">
-                    <a href="#aicte">AICTE</a>
-                </div> -->
-                <div class="approval-name">
+                
+                <div id="img-anu" class="approval-name">
                     <img src="../photos/image 19.png" alt="Photo">
                     <a href="#anu">ANU</a>
-                    <button><i class="fa-solid fa-trash"></i></button>
+                    <button id="img-anu" onclick="DeleteBtn(this)"><i class="fa-solid fa-trash"></i></button>
                 </div>
-                <div class="approval-name">
+                <div id="img-aicte" class="approval-name">
                     <img src="../photos/image 20.png" alt="Photo">
                     <a href="#aicte">AICTE</a>
-                    <button><i class="fa-solid fa-trash"></i></button>
+                    <button id="img-aicte" onclick="DeleteBtn(this)"><i class="fa-solid fa-trash"></i></button>
                 </div>
                 
             </div>
-            <p id="aicte" class="head-name">AICTE</p>
-            <div class="pdf-holder">
-                <embed class="object" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210101201653/PDF.pdf" />
-                <button><i class="fa-solid fa-trash"></i></button>
+            <div id="aicte" class="aicte-div">
+                <p id="aicte-name" class="head-name">AICTE</p>
+                <div class="pdf-holder" id="aicte-row">
+                    <embed class="object" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210101201653/PDF.pdf" />
+                    <div class="row">
+                        <button id="aicte" onclick="DeleteBtn(this)" ><i class="fa-solid fa-trash"></i></button>
+                        <button><i class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+                </div>
             </div>
 
-            <p id="anu" class="head-name">Acharya Nagarjuna University</p>
-            <div class="pdf-holder">
-                <embed class="object" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210101201653/PDF.pdf" />
-                <button><i class="fa-solid fa-trash"></i></button>
+            <div id="anu" class="aicte-div">
+                <p id="anu-name" class="head-name">Acharya Nagarjuna University</p>
+                <div class="pdf-holder" id="anu-row">
+                    <embed class="object" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210101201653/PDF.pdf" />
+                    <div class="row">
+                        <button id="anu" onclick="DeleteBtn(this)"><i class="fa-solid fa-trash"></i></button>
+                        <button><i class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form">
@@ -72,6 +80,9 @@
                 </div>
                 <button type="submit">Add</button>
             </form>
+        </div>
+        <div class="btn-div">
+            <button class="button-56" id="saveButton" role="button">SAVE</button>
         </div>
     </div>
     

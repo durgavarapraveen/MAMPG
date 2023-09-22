@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap+Condensed:ital@1&family=EB+Garamond&family=Golos+Text:wght@500&family=IBM+Plex+Sans:wght@300;400&family=Jockey+One&family=Lato:ital@0;1&family=Lobster&family=Martian+Mono:wght@300&family=Montserrat&family=Playfair:ital@1&family=Poppins&family=Roboto+Slab:wght@200;300&family=Roboto:ital,wght@0,300;1,300&family=Source+Serif+4&family=Space+Grotesk&display=swap');
-
+::-webkit-scrollbar {
+    width: 0;
+}
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 body {
     font-family: 'Montserrat', sans-serif;
@@ -89,8 +91,17 @@ body {
     width: 180px;
     height: 180px;
 }
-.pdf-holder {
+.aicte-div {
     width: 70%;
+    margin: auto;
+    height: 600px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pdf-holder {
+    width: 100%;
     margin: auto;
     height: 600px;
     margin-bottom: 60px;
@@ -105,23 +116,20 @@ body {
     border: none;
     outline: none;
     cursor: pointer;
-    margin-left: 10px;
     border-radius: 3px;
+}
+embed {
+    width: 100%;
 }
 .pdf-holder button:active {
     border: 1px solid black;
 }
-.pdf-holder object {
-    width: 100%;
-    height: 99%;
-}
+
 .head-name {
     margin: 15px auto;
     font-size: 40px;
 }
-object {
-    width: 100%;
-}
+
 .form {
     background-color: #FFFFFF;
 }
@@ -155,27 +163,97 @@ form input {
     align-items: center;
     justify-content: center;
     width: 50%;
-    height: 30px;
-    text-indent: 10px;
+    /* height: 30px; */
+    /* text-indent: 10px; */
 }
 form button {
     margin: 0px 20px;
     padding: 6px 12px;
 }
+.row {
+    display: flex;
+    flex-direction: column;
+}
+.btn-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    height: 100%;
+}
 
+
+/* CSS */
+.button-56 {
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-56:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.button-56:hover:after {
+  transform: translate(0, 0);
+}
+
+.button-56:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.button-56:hover {
+  outline: 0;
+}
 @media screen and (max-width: 992px) {
     .approvals-row img {
         width: 150px;
         height: 150px;
     }
+    .aicte-div {
+        width: 90%;
+        height: 500px;
+        margin-bottom: 30px;
+    }
     .pdf-holder {
-        width: 80%;
+        width: 100%;
         margin: auto;
         height: 500px;
         margin-bottom: 60px;
     }
     .head-name {
-        margin: 15px auto;
+        margin: 5px auto;
         font-size: 30px;
     }
     form label {
@@ -256,8 +334,13 @@ form button {
         margin: 15px auto;
         font-size: 20px;
     }
-    .pdf-holder {
+    .aicte-div {
         width: 90%;
+        height: 500px;
+        margin-bottom: 30px;
+    }
+    .pdf-holder {
+        width: 100%;
         margin: auto;
         height: 400px;
         margin-bottom: 60px;
@@ -298,5 +381,25 @@ form button {
         margin: 10px auto;
         padding: 6px 12px;
         width: 100%;
+    }
+    .pdf-holder {
+        width: 100%;
+        margin: auto;
+        height: 500px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .row {
+        flex-direction: row;
+    }
+    embed {
+        width: 100%;
+        height: 500px;
+    }
+    .aicte-div {
+        width: 90%;
+        height: 500px;
+        margin-bottom: 30px;
     }
 }
