@@ -1,9 +1,8 @@
 
-
+console.log('cc')
 // document.addEventListener('DOMContentLoaded', function() {
     const photoInput = document.getElementById('photoInput');
     const photoDisplay = document.getElementById("photoDisplay");
-    const Info = document.getElementById('Info');
     const saveButton = document.getElementById('saveButton');
 
     const idAims = [];
@@ -15,6 +14,7 @@
     const ListImage = [];
     const idInfo = [];
     const TextChnageInfo = [];
+
 
     photoInput.addEventListener('change', (event)=> {
         const selectedPhoto = event.target.files[0];
@@ -33,10 +33,9 @@
         photoInput.click();
     })
 
-
     const Aims = document.querySelectorAll('p');
     const Provides = document.querySelectorAll('span');
-
+    const Info = document.getElementById('Info')
 
     Aims.forEach(aim => {
         aim.addEventListener('blur', function() {
@@ -64,6 +63,8 @@
         X.style.display = 'none';
     }
 
+    
+
     saveButton.addEventListener('click', function() {
         const formData = [{
             idAims,
@@ -72,11 +73,10 @@
             UpdateAims,
             UpdateProvides,
             idImage,
-            ListImage,
-            idInfo,
-            TextChnageInfo
+            ListImage
         }]
         console.log(formData);
+        console.log('clicked save')
     })
 
 

@@ -68,7 +68,7 @@
     handleFileInputChange(photoInput3, photoDisplay3);
     handleFileInputChange(photoInput4, photoDisplay4);
 
-
+// }
 
 function DeleteBtn(element) {
     console.log('Clicked')
