@@ -96,7 +96,8 @@ body {
     background-color: #FFFFFF;
     border-radius: 10px;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
     padding: 30px 30px;
     height: 100%;
     margin-top: 30px;
