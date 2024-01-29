@@ -14,38 +14,168 @@ const submitBtn = document.querySelectorAll('.input-btn')
 const form = document.getElementsByClassName('.form')
 const left = document.querySelectorAll('.left');
 
+var committeeMembers = [];
+var pointsArray = [];
+
+function deletePoint(button) {
+    var pointId = button.parentElement.id;
+    var pointElement = document.getElementById(pointId);
+    pointElement.remove();
+
+    // Remove the point from the array
+    pointsArray = pointsArray.filter(point => point.id !== pointId);
+}
+
+function addPoint(event) {
+    event.preventDefault();
+
+    var newPointText = document.getElementById('newPointInput').value;
+
+    if (newPointText.trim() !== '') {
+        var pointsContainer = document.getElementById('pointsContainer');
+        var newPointId = 'cac-' + (pointsArray.length + 1);
+
+        var pointRow = document.createElement('div');
+        pointRow.className = 'point-row';
+        pointRow.id = newPointId;
+
+        var pointText = document.createElement('p');
+        pointText.className = 'point-text';
+        pointText.contentEditable = true;
+        pointText.textContent = newPointText;
+
+        var deleteButton = document.createElement('button');
+        deleteButton.className = 'btn-icon';
+        deleteButton.onclick = function () { deletePoint(this); };
+        deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
+
+        pointRow.appendChild(pointText);
+        pointRow.appendChild(deleteButton);
+
+        pointsContainer.appendChild(pointRow);
+
+        // Add the point to the array
+        pointsArray.push({ id: newPointId, text: newPointText });
+
+        document.getElementById('newPointInput').value = ''; // Clear the input field after adding the point
+    }
+}
+
+function displayPoints() {
+    var pointsContainer = document.getElementById('pointsContainer');
+    pointsContainer.innerHTML = ''; // Clear previous content
+
+    pointsArray.forEach(function (point) {
+        var pointRow = document.createElement('div');
+        pointRow.className = 'point-row';
+        pointRow.id = point.id;
+
+        var pointText = document.createElement('p');
+        pointText.className = 'point-text';
+        pointText.contentEditable = true;
+        pointText.textContent = point.text;
+
+        var deleteButton = document.createElement('button');
+        deleteButton.className = 'btn-icon';
+        deleteButton.onclick = function () { deletePoint(this); };
+        deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
+
+        pointRow.appendChild(pointText);
+        pointRow.appendChild(deleteButton);
+
+        pointsContainer.appendChild(pointRow);
+    });
+}
+
+// Initial display of points
+displayPoints();
+
+function addCommitteeMember() {
+    var sno = document.getElementById('sno').value;
+    var name = document.getElementById('name').value;
+    var designation = document.getElementById('designation').value;
+    var nature = document.getElementById('nature').value;
+
+    var newMember = {
+        sno: sno,
+        name: name,
+        designation: designation,
+        nature: nature
+    };
+
+    committeeMembers.push(newMember);
+
+    console.log(committeeMembers);
+    document.getElementById('sno').value = '';
+    document.getElementById('name').value = '';
+    document.getElementById('designation').value = '';
+    document.getElementById('nature').value = '';
+    updateTable()
+}
+
+
+function updateTable() {
+    var tableBody = document.getElementById('committeeTable').getElementsByTagName('tbody')[0];
+
+    if (!tableBody) {
+        tableBody = document.createElement('tbody');
+        document.getElementById('committeeTable').appendChild(tableBody);
+    }
+
+    tableBody.innerHTML = '';
+
+    committeeMembers.forEach(function (member, index) {
+        var trElement = document.createElement('tr');
+        trElement.innerHTML = '<td>' + member.sno + '</td>' +
+            '<td>' + member.name + '</td>' +
+            '<td>' + member.designation + '</td>' +
+            '<td>' + member.nature + '</td>' +
+            '<td><button onclick="deleteMember(' + index + ')">Delete</button></td>';
+        tableBody.appendChild(trElement);
+    });
+    console.log(committeeMembers)
+}
+
+function deleteMember(index) {
+    committeeMembers.splice(index, 1);
+    updateTable();
+}
+
+
+
+updateTable()
+
+
+
 for (var i = 0; i < form.length; i++) {
-    form[i].addEventListener('click', function(event) {
-      event.preventDefault();
+    form[i].addEventListener('click', function (event) {
+        event.preventDefault();
     });
 }
 
 textInput.forEach((text, index) => {
-    text.addEventListener('click', function() {
+    text.addEventListener('click', function () {
         const lefts = left[index]
         const input = this.previosElementSibling;
         const point = input.value;
-        if(point!=='') {
+        if (point !== '') {
             const listItem = document.createElement('p');
             listItem.innerHTML = `${point} <button  id="cac-1" onclick="DeleteBtn(this)" class="btn-icon"><i class="fa-solid fa-trash"></i></button>`;
             addedPoints.push(listItem);
             lefts.appendChild(listItem);
         }
         const deleteButton = listItem.querySelector('.delete-button');
-        deleteButton.addEventListener('click', function() {
-                    // Remove the clicked list item and remove it from the array
-        pointList.removeChild(listItem);
+        deleteButton.addEventListener('click', function () {
+            pointList.removeChild(listItem);
             addedPoints.splice(addedPoints.indexOf(listItem), 1);
         });
-
-                // Clear the text area
         input.value = '';
     })
 })
 
 
 paragraph.forEach((text) => {
-    text.addEventListener('blur', function() {
+    text.addEventListener('blur', function () {
         idtextChange.push(this.id);
         var editableText = document.getElementById(this.id).innerText;
         ListtextChange.push(editableText);
@@ -55,7 +185,7 @@ paragraph.forEach((text) => {
 })
 
 textTable.forEach((text) => {
-    text.addEventListener('blur', function() {
+    text.addEventListener('blur', function () {
         idRowChange.push(this.id)
         console.log(idRowChange)
         var editableRow = document.getElementById(this.id);
@@ -80,13 +210,15 @@ function DeleteBtn(element) {
 }
 
 
-saveButton.addEventListener('click', function() {
+saveButton.addEventListener('click', function () {
     const form = [{
         idRowChange,
         ListRowChnage,
         idtextChange,
         ListtextChange,
-        IdDeleteButtonds
+        IdDeleteButtonds,
+        committeeMembers,
+        pointsArray
     }]
     console.log(form)
 }) 

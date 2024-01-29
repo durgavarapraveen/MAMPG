@@ -96,7 +96,6 @@ body {
     background-color: #FFFFFF;
     border-radius: 10px;
     display: flex;
-    /* flex-direction: column; */
     flex-wrap: wrap;
     padding: 30px 30px;
     height: 100%;
@@ -113,6 +112,8 @@ body {
 .left button {
     padding: 2px 5px;
     margin: 0 2px;
+    width: 30px;
+    height: 30px;
 }
 .right {
     width: 65%;
@@ -144,6 +145,7 @@ form {
     outline: none;
     border: none;
     justify-content: center;
+    width: 100%;
 }
 .input {
     height: 35px;
@@ -217,6 +219,36 @@ form {
     margin-bottom: 30px;
     height: 100%;
 }
+
+.Add_div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
+    width: 100%;
+    margin: auto;
+}
+.Add_div input {
+    height: 30px;
+    text-indent: 5px;
+}
+.form_add_div {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form_add_div button {
+    padding: 5px 20px;
+    font-size: 16px;
+    margin: 10px 5px;
+    cursor: pointer;
+}
+.point-row {
+    display: flex;
+    align-items: center;
+  }
 @media screen and (max-width: 992px) {
     .row {
         flex-direction: column;
@@ -246,7 +278,6 @@ form {
 @media screen and (max-width: 600px) {
     .clgname {
         position: relative;
-        /* width: 100vw; */
         display: flex;
         background-color: #8D4B6E;
         color: #FFFFFF;
@@ -279,7 +310,7 @@ form {
         margin-bottom: 30px;
     } 
     .left {
-        /* width: 90%; */
+        width: 100%;
         border: 1px solid black;
         background-color: #FFFFFF;
         border-radius: 10px;

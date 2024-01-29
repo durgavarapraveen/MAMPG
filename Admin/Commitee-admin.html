@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Committee</title>
-    <link rel="stylesheet" href="Commitee-admin.css" >
+    <link rel="stylesheet" href="Commitee-admin.css">
     <script src="https://kit.fontawesome.com/17305c1313.js" crossorigin="anonymous"></script>
     <script src="Commitee-admin.js" defer></script>
 </head>
+
 <body>
     <div class="container">
         <div class="clgname">
             <img src="photos\image 1.png" alt="Logo" />
             <div class="header-right">
-                <span class="p">Medrametla  Anjamma Mastan Rao PG College</span>
+                <span class="p">Medrametla Anjamma Mastan Rao PG College</span>
                 <span class="span1">Recognized by AICTE, Affiliated to Acharya Nagarjuna University</span>
-                <span class="span2" >Kesanupalli village, Narasaraopet(m), Palnadu (Dt), Andhra Pradesh</span>
+                <span class="span2">Kesanupalli village, Narasaraopet(m), Palnadu (Dt), Andhra Pradesh</span>
             </div>
         </div>
         <div class="navbar">
@@ -27,71 +29,64 @@
             </div>
             <div class="column">
                 <div class="line"></div>
+
                 <p class="cac" contenteditable="true">College Academic Committee (CAC)</p>
                 <div class="line"></div>
-                
+
                 <div class="row">
                     <div class="left">
-                        <!-- <div style="flex-direction: row;display: flex; align-items:center" id="cac-1"> -->
-                            <p id="cac-1" contenteditable="true">1. To monitor the academic and other related activities of the College.</p><button  id="cac-1" onclick="DeleteBtn(this)" class="btn-icon"><i class="fa-solid fa-trash"></i></button>
-                        <!-- </div> -->
-                        <!-- <div style="flex-direction: row;display: flex; align-items:center"  id="cac-2"> -->
-                            <p id="cac-2" contenteditable="true">2. To take recommendations of the Staff Selection Committee</p><button id="cac-2" class="btn-icon" onclick="DeleteBtn(this)"><i class="fa-solid fa-trash" ></i></button>
-                        <!-- </div>
-                        <div style="flex-direction: row;display: flex; align-items:center"  id="cac-3"> -->
-                            <p id="cac-3" contenteditable="true">3. To consider communications, received from the University, Government, AICTE/PCI, etc., from time to time</p><button class="btn-icon" onclick="DeleteBtn(this)" id="cac-3"><i class="fa-solid fa-trash"></i></button>
-                        <!-- </div>
-                        <div style="flex-direction: row;display: flex; align-items:center"  id="cac-4"> -->
-                            <p id="cac-4" contenteditable="true">4. To discuss about the annual budget of the College</p><button><i class="fa-solid fa-trash" id="cac-4" class="btn-icon" onclick="DeleteBtn(this)"></i></button>
-                        <!-- </div> -->
-                        <form class="form">
-                            <input type="text" class="input" required  />
-                            <input type="submit" class="input-btn" />
+                        <div class="" style="width: 100%;" id="pointsContainer">
+
+                        </div>
+                        <form class="form" onsubmit="addPoint(event)">
+                            <input type="text" class="input" id="newPointInput" required />
+                            <input type="submit" class="input-btn" value="Add Point" />
                         </form>
                     </div>
                     <div class="right">
                         <div class="scroll">
-                            <table>
-                                <tr>
-                                    <th>S.No</th>
-                                    <th>Name</th>
-                                    <th>Designation</th>
-                                    <th>Nature</th>
-                                </tr>
-                                <tr id="cac-des-1">
-                                    <td id="cac-des-1" aria-label="sno" contenteditable="true">1</td>
-                                    <td id="cac-des-1" aria-label="name" contenteditable="true">Dr. M. Prasada Rao</td>
-                                    <td id="cac-des-1" aria-label="designation" contenteditable="true">Professor & Principal</td>
-                                    <td id="cac-des-1" aria-label="nature" contenteditable="true">Coordinator</td>
-                                </tr>
-                                <tr id="cac-des-2">
-                                    <td id="cac-des-2" contenteditable="true">2</td>
-                                    <td id="cac-des-2" contenteditable="true">Mr. B. Rama Rao</td>
-                                    <td id="cac-des-2" contenteditable="true">Associate Professor</td>
-                                    <td id="cac-des-2" contenteditable="true">Member In charge</td>
-                                </tr>
-                                <tr id="cac-des-3">
-                                    <td id="cac-des-3" contenteditable="true">3</td>
-                                    <td id="cac-des-3" contenteditable="true">Mr. B. Ramesh Kumar. T</td>
-                                    <td id="cac-des-3" contenteditable="true">Professor</td>
-                                    <td id="cac-des-3" contenteditable="true">Member</td>
-                                </tr>
+                            <table id="committeeTable">
+                                <thead>
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>Name</th>
+                                        <th>Designation</th>
+                                        <th>Nature</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+
                             </table>
+                        </div>
+                        <div class="form_add_div">
+                            <form>
+                                <div class="Add_div">
+                                    <input type="text" id="sno" required placeholder="Id" />
+                                    <input type="text" id="name" required placeholder="Name" />
+                                    <input type="text" id="designation" required placeholder="Designation" />
+                                    <input type="text" id="nature" required placeholder="Nature" />
+                                </div>
+                                <button type="button" onclick="addCommitteeMember()">Add Member</button>
+                            </form>
                         </div>
                     </div>
                 </div>
+
                 <div class="line"></div>
+
                 <p class="cac">Internal Quality Assurance Cell (IQAC)</p>
                 <div class="line"></div>
                 <div class="row">
                     <div class="left">
                         <p>1. Assessment and evaluation at institution level.</p>
                         <p>2. Continuous improvement initiatives.</p>
-                        <p>3. Monitors and evaluates the programmer effectiveness and proposes necessary changes for the attainment of PEOs and Pos.</p>
+                        <p>3. Monitors and evaluates the programmer effectiveness and proposes necessary changes for the
+                            attainment of PEOs and Pos.</p>
                         <p>4. Conducts and interprets various surveys required to assess POs and PEOs.</p>
-                        <p>5. Prepare periodic reports/records on programmer activities and progress and submit to Institute Department advisory Board.</p>
+                        <p>5. Prepare periodic reports/records on programmer activities and progress and submit to
+                            Institute Department advisory Board.</p>
                         <p>6. Interact with students, faculty and other stakeholders in facilitating PEOs.</p>
-                        
+
                     </div>
                     <div class="right">
                         <div class="scroll">
@@ -138,7 +133,7 @@
                                     <td>Professor</td>
                                     <td>Member</td>
                                 </tr>
-                                
+
                                 <tr>
                                     <th>7</th>
                                     <td>Mrs. K. Tirumala Devi</td>
@@ -169,7 +164,8 @@
                                     <td>Assistant Professor</td>
                                     <td>Member</td>
                                 </tr>
-                                <tr><th>12</th>
+                                <tr>
+                                    <th>12</th>
                                     <td>Mrs. R. Soundarya</td>
                                     <td>Assistant Professor</td>
                                     <td>Member</td>
@@ -208,11 +204,13 @@
                 <div class="row">
                     <div class="left">
                         <p>1. Promote faculty to write effective research proposals for funding agencies.</p>
-                        <p>2. To encourage faculty to publish papers in peer reviewed journals/conference papers with high impact factor.</p>
-                        <p>3. Promote faculty to organize conference /STTP/workshops/ seminars/Training/ FDP for faculty.</p>
+                        <p>2. To encourage faculty to publish papers in peer reviewed journals/conference papers with
+                            high impact factor.</p>
+                        <p>3. Promote faculty to organize conference /STTP/workshops/ seminars/Training/ FDP for
+                            faculty.</p>
                         <p>4. To facilitate patent applications and licensing.</p>
                         <p>5. Assign & Monitor student Projects.</p>
-                        
+
                     </div>
                     <div class="right">
                         <div class="scroll">
@@ -253,7 +251,7 @@
                                     <td>Professor</td>
                                     <td>Member</td>
                                 </tr>
-                                
+
                                 <tr>
                                     <th>6</th>
                                     <td>Ms. M. Chandana</td>
@@ -272,7 +270,7 @@
                                     <td>Assistant Professor</td>
                                     <td>Member</td>
                                 </tr>
-                                
+
                             </table>
                         </div>
                     </div>
@@ -283,6 +281,7 @@
             </div>
         </div>
     </div>
-    
+
 </body>
+
 </html>
